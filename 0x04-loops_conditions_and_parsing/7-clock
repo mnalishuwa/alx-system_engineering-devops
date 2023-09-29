@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script prints "Best School" to stdout
+
+i=0
+h=0
+
+while [ $i -lt $((13 * 60)) ]; do
+      if [ $((i%60)) -eq 0 ]
+      	 then echo "Hour: $h"
+	 ((h++))
+      else
+	 echo $((i%60))
+      fi
+      ((i++))
+done
