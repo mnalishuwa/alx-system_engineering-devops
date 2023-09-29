@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script lists files in directory
+
+dir_files=($(ls))
+i=0
+
+for file in "${dir_files[@]}"; do
+    ((i++))
+    # create output filename
+    output_file="${file#*-}"
+    echo "$output_file"
+done
