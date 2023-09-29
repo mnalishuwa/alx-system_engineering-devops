@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Terminates another running process
 
-kill -9 "$(pidof 7-highlander | tr ' ' '\n')"
+kill -9 "$(pidof 7-highlander | xargs -n1)"
