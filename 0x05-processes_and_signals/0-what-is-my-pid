@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script echos the pid of the script to stdout
+
+echo $$
