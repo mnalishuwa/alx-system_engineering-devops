@@ -5,13 +5,13 @@ function handlerSIGTERM()
 {
     echo "I hate the kill command"
     rm /var/run/myscript.pid
-    kill $$
+    exit
 }
 
 function handlerSIGQUIT()
 {
     rm /var/run/myscript.pid
-    kill $$
+    exit
 }
 
 trap "echo 'Y U no love me?!'" SIGINT
