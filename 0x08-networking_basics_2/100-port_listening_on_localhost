@@ -2,4 +2,4 @@
 # Listen on port 98 on localhost
 
 port=98
-netcat --listen localhost --port "$port"
+netcat --listen localhost "$port"
