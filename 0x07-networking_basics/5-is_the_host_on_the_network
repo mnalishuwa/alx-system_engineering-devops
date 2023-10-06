@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Ping an address passed as an argument 'ping <address>'
+
+argv=("$@")
+for arg in "${argv[@]}";
+do
+    ping -c 5 "$arg"
+done

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Display all active listening ports 'netstat -tulpn'
+
+netstat --tcp --udp --listening --programs --numeric
