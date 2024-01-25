@@ -8,15 +8,15 @@
 sudo apt-update
 sudo apt-install -y nginx
 
-sudo bash -c 'cat << EOF > /var/www/html/index.html
-<html>
-    <head>
-        <title>Hello World!</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
-EOF'
-
+# sudo bash -c 'cat << EOF > /var/www/html/index.html
+# <html>
+#     <head>
+#         <title>Hello World!</title>
+#     </head>
+#     <body>
+#         <h1>Hello World!</h1>
+#     </body>
+# </html>
+# EOF'
+echo 'Hello World!' > /var/www/html/index.html
 sudo service nginx restart
