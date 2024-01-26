@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 # Script configures a new Ubuntu machine to respect requirements below
-# Install nginx
-# Nginx should be listening on port 80
-# Nginx must return a page that contains the string Hello World!
-# when queried at its root
 
-sudo apt-get update
-sudo apt-get install -y nginx
-sudo echo "Hello World!" > /var/www/html/index.html
-
-sudo service nginx restart
+apt-get update
+apt-get install -y nginx
+echo "Hello World!" > /var/www/html/index.html
+service nginx restart
