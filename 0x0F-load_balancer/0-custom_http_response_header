@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Configure Nginx so that its HTTP response contains a custom header
 custom_http_header="X-Served-By $hostname"
 apt-get update
