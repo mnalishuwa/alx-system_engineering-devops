@@ -3,5 +3,8 @@
 
 apt-get update
 apt-get install -y nginx
-sudo echo "Hello World!" > /var/www/html/index.html
-service nginx restart
+# sudo echo "Hello World!" > /var/www/html/index.html
+# use tee to perform redirection with elevated permission
+# Applying sudo with echo and the redirection operation only affects the echo command
+echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
+sudo service nginx restart
