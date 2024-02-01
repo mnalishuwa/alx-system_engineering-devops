@@ -9,7 +9,7 @@ sudo apt-get install -y nginx
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 
 # Add redirection, check uri & uri/ before redirecting to specific location
-sed -i -e '/root \/var\/www\/html;/ {' -e 'r /dev/stdin' -e 'd' -e '}' /etc/nginx/sites-available/default << EOF
+sudo sed -i -e '/root \/var\/www\/html;/ {' -e 'r /dev/stdin' -e 'd' -e '}' /etc/nginx/sites-available/default << EOF
        root /var/www/html;
 
        location /redirect_me {
