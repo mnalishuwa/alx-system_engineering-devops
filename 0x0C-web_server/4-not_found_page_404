@@ -26,11 +26,11 @@ sudo sed -i -e '/root \/var\/www\/html;/ {' -e 'r /dev/stdin' -e 'd' -e '}' /etc
 EOF
 
 # Change 404 not found to redirect to our custom 404 page
-sudo sed -i 's/try_files \$uri \$uri\/ =404;/try_files \$uri \$uri\/ @not_found_404/' /etc/nginx/sites-available/default
+sudo sed -i 's/try_files \$uri \$uri\/ =404;/try_files \$uri \$uri\/ @not_found_404;/' /etc/nginx/sites-available/default
 
 sudo sed -i -e '/# pass PHP scripts to FastCGI server/ {' -e 'r /dev/stdin' -e 'd' -e '}' /etc/nginx/sites-available/default <<EOF
         location @not_found_404 {
-		 return 404 not_found_page_404.html
+		 return 404 not_found_page_404.html;
 	}
 
 	# pass PHP scripts to FastCGI server
