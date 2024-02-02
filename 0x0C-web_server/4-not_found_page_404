@@ -41,4 +41,4 @@ EOF
 
 # Note that we can also use the rewrite directive or return directive alone without checking the uri & uri/
 # restart web server
-# sudo service nginx restart
+sudo service nginx restart
