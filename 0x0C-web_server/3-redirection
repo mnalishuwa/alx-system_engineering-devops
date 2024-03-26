@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Configures Nginx server so that /redirect_me is redirecting to another page.
+
+# Update and install webserver
+sudo apt-get update
+sudo apt-get install -y nginx
+
+# Create backup copy of original file
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+
+# Add redirection, check uri & uri/ before redirecting to specific location
+sudo sed -i -e '/root \/var\/www\/html;/ {' -e 'r /dev/stdin' -e 'd' -e '}' /etc/nginx/sites-available/default << EOF
+       root /var/www/html;
+
+       location /redirect_me {
+       		try_files \$uri \$uri/ @redirect;
+       }
+
+       location @redirect {
+       		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+       }
+
+EOF
+
+# Note that we can also use the rewrite directive or return directive alone without checking the uri & uri/
+# restart web server
+sudo service nginx restart
